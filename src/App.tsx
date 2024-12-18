@@ -43,7 +43,7 @@ const App = () => {
   }, [error]);
 
   if (isLoading) {
-    return <p aria-live="polite">Loading...</p>;
+    return <p className="loading-text" aria-live="polite">Loading...</p>;
   }
 
   if (error instanceof Error) {
