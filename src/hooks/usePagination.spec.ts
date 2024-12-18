@@ -47,11 +47,11 @@ describe("usePagination", () => {
     const { result } = renderHook(() => usePagination(paginationMockData));
 
     act(() => {
-      result.current.handlePageChange(2); // Move to the second page
+      result.current.handlePageChange(2);
     });
 
     act(() => {
-      result.current.handlePrevPage(); // Go back to the first page
+      result.current.handlePrevPage();
     });
 
     expect(result.current.currentPage).toBe(1);
@@ -64,11 +64,11 @@ describe("usePagination", () => {
     const { result } = renderHook(() => usePagination(paginationMockData));
 
     act(() => {
-      result.current.handlePageChange(1); // Move to the first page
+      result.current.handlePageChange(1); 
     });
 
     act(() => {
-      result.current.handleNextPage(); // Go to the next page
+      result.current.handleNextPage(); 
     });
 
     expect(result.current.currentPage).toBe(2);
@@ -81,14 +81,14 @@ describe("usePagination", () => {
     const { result } = renderHook(() => usePagination(paginationMockData));
 
     act(() => {
-      result.current.handlePageChange(2); // Already on the last page
+      result.current.handlePageChange(2); 
     });
 
     act(() => {
-      result.current.handleNextPage(); // Try to go to the next page
+      result.current.handleNextPage(); /
     });
 
-    expect(result.current.currentPage).toBe(2); // Should stay on the last page
+    expect(result.current.currentPage).toBe(2); 
     expect(result.current.currentRecords).toEqual(
       paginationMockData.slice(5, 7)
     );
@@ -98,14 +98,14 @@ describe("usePagination", () => {
     const { result } = renderHook(() => usePagination(paginationMockData));
 
     act(() => {
-      result.current.handlePageChange(1); // Already on the first page
+      result.current.handlePageChange(1); 
     });
 
     act(() => {
-      result.current.handlePrevPage(); // Try to go to the previous page
+      result.current.handlePrevPage(); 
     });
 
-    expect(result.current.currentPage).toBe(1); // Should stay on the first page
+    expect(result.current.currentPage).toBe(1);
     expect(result.current.currentRecords).toEqual(
       paginationMockData.slice(0, 5)
     );
