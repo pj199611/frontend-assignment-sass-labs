@@ -38,7 +38,7 @@ const App = () => {
 
   useEffect(() => {
     if (error) {
-      retryButtonRef?.current?.focus();
+      retryButtonRef?.current!.focus();
     }
   }, [error]);
 
@@ -75,9 +75,9 @@ const App = () => {
         <tbody>
           {currentRecords.map((project, index) => (
             <tr key={project["s.no"]}>
-              <td>{project["s.no"] + 1}</td>
+              <td>{project["s.no"]! + 1}</td>
               <td>{project["percentage.funded"]}</td>
-              <td>${project["amt.pledged"].toLocaleString()}</td>
+              <td>${project["amt.pledged"]!.toLocaleString()}</td>
             </tr>
           ))}
           <tr className="pagination-row">
