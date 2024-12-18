@@ -85,7 +85,7 @@ describe("usePagination", () => {
     });
 
     act(() => {
-      result.current.handleNextPage(); /
+      result.current.handleNextPage();
     });
 
     expect(result.current.currentPage).toBe(2); 
